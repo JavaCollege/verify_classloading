@@ -47,5 +47,5 @@ v0.0.2
 
 两个可行办法：
 
-- 通过java agent在instrument中可以修改JDK中的类，比如java.util.Date类。
+- 通过java agent在instrument中可以修改JDK中的类，比如这里的例子里（[代码](https://github.com/kimmking/research/blob/master/agentx/src/main/java/cn/kimmking/research/agentx/XAgent.java)）运行时修改了java.util.Date类，运行方式参考（[README.md](https://github.com/kimmking/research/blob/master/agentx/README.md)）。
 - 通过-Djava.endorsed.dirs覆盖类（jdk1.8有这个参数），比如覆盖掉UUID类（详见[uuid.md](uuid/uuid.md) ）。
