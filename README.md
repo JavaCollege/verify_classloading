@@ -43,6 +43,11 @@ v0.0.2
 
 这就验证了确实是通过ExtClassLoader加载的。
 
+使用场景：做外挂包机制的两种方式：
+- 通过把外挂包所在文件夹里的所有jar，拼成字符串，放到classpath的前面。 app classloader加载的。
+- 通过java.ext.dirs指定扩展类加载器加载的jar。
+- 运行期通过反射，在appClassloader.ucp.path这个ArrayList的最前面加上我们自定义的jar的URL。（必须在要被覆盖的类被加载之前做这个事儿。）
+
 ### 验证JDK类运行期修改
 
 两个可行办法：
